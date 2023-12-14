@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM</title>
+    <link rel="stylesheet" href="porfolio.css">
+    <link rel="icon" href="assests/icono.ico" type="image/x-icon">
+    <script src = "porfolio.js"></script>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav class="navbar">
+            <div class="icon">
+                <img id="Icon" alt="icon" src="assests/rm-low-resolution-logo-color-on-transparent-background-white.png">
+            </div>
+            <ul class="menu">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Portada -->
+        <section class="Portada">
+            <img id="photo"  src="assests/rm-low-resolution-logo-color-on-transparent-background.png" alt="photo">
+        </section>
+        <!-- Sección Acerca de Mí -->
+        <section id="about">
+            <h1 class="title">About me</h1>
+            <img src="assests/Logo-fiuba_big.png" alt="fiuba-logo" id="fiuba-logo"></img>
+            <p style="margin-left: 500px; color: bisque; margin-top: -160px; font-size: 20px; margin-right: 60px;"> 
+                Hi, welcome to my porfolio my name is <a style="color: #33ff00;">Ruy Mori<a>.<br> Student of Univerity of Buenos Aires, Studying Software Engineering. 
+                My pasion is the world of internet, one of my dreams is to work as a developer in the big tech companies as google, meta, amazon ...<br>
+                I like learn new things everyday and solve problems,I'm use to work on teamnm but also i like trying to solve challenges by my own.</p>
+            <h1 id="skill">Skills</h1>
+            <div class="contenedor">
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="projects" class="project1">
+            <h1 class="title">Proyects</h1>
+            <div class="gallery">
+                <button class="buttonProyect" onclick="redirect('https://github.com/Ruyllex')">
+                    <img src="assests/algoDefense.png" alt="Imagen 1">
+                </button>
+                <button class="buttonProyect">
+                    <img src="assests/algoDefense.png" alt="Imagen 1">
+                </button>
+                <button class="buttonProyect">
+                    <img src="assests/algoDefense.png" alt="Imagen 1">
+                </button>
+                <button class="buttonProyect">
+                    <img src="assests/algoDefense.png" alt="Imagen 1">
+                </button>
+
+                <!-- Agrega más imágenes según sea necesario -->
+              </div>
+
+        </section>
+        <!-- Sección Contacto -->
+        <section id="contact">
+            <h1 class="title">Contact</h1>
+            <div class="contenedor">
+                <button class="btn-contacto">
+                    <img onclick="redirect('https://www.instagram.com/ruy_mori/?next=%2F')" src="assests/INstragramIcon.png" alt="Icono 1" style="width: 60px; height: 60px; margin-bottom: -7px;" class="icono">
+                </button>
+                <button  class="btn-contacto">
+                    <img onclick="redirect('https://github.com/Ruyllex')" src="assests/github_logo_icon_147285.png" alt="Icono 2" style="margin-left: 5px;" class="icono">
+                </button>
+                <button class="btn-contacto">
+                    <img onclick="redirect('')" src="assests/gamilIcon.png" alt="Icono 3" id="GMAILBUTTON">
+                </button>
+                <button class="btn-contacto">
+                    <img  onclick="redirect('https://www.linkedin.com/in/ruy-mori-112967259/')" src="assests/linkedinIcon.png" alt="Icono 3" style="width: 55px; margin-left: 15px;">
+                </button>
+                <button class="btn-contacto">
+                    <img src="assests/facebookIcon.png" alt="Icono 3" style="width: 70px;height: 55px; margin-bottom: -3px;">
+                </button>
+                <button class="btn-contacto">
+                    <img onclick="redirect('https://wa.me/1149458922/')" src="assests/WhatsAppIcon.png" alt="Icono 3">
+                </button>
+                <button class="btn-contacto">
+                    <img onclick="redirect('https://twitter.com/RuyMori')" src="assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style="width: 50px; height: 40px; margin-left: 10px;">
+                </button>
+            
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2023 Ruy Mori</p>
+    </footer>
+</body>
+</html>
