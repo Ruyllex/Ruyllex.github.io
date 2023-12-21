@@ -17,6 +17,7 @@
             </div>
             <ul class="menu">
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#skill">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -35,30 +36,58 @@
                 Hi, welcome to my porfolio my name is <a style="color: #33ff00;">Ruy Mori<a>.<br> Student of Univerity of Buenos Aires, Studying Software Engineering. 
                 My pasion is the world of internet, one of my dreams is to work as a developer in the big tech companies as google, meta, amazon ...<br>
                 I like learn new things everyday and solve problems,I'm use to work on teamnm but also i like trying to solve challenges by my own.</p>
-            <h1 id="skill">Skills</h1>
-            <div class="contenedor">
-            </div>
+        </section>
+        <section id="skill">
+            <h1 class="title">Skills</h1>
+            <ul class="skills-list">
+                <li class="skill-group">
+                    <span class="category">Programming languages:</span>
+                    <img class="skill" src="assests/icons8-lenguaje-de-programación-96.png" alt="Java">
+                    <img class="skill" src="assests/icons8-logotipo-de-c-plus-plus-96.png" alt="C++">
+                    <img class="skill" src="assests/icons8-python-96.png" alt="Python">
+                </li>
+        
+                <li class="skill-group">
+                    <span class="category">Frontend technologies:</span>
+                    <img class="skill" src="assests/icons8-html-96.png" alt="HTML5">
+                    <img class="skill"  src="assests/icons8-css3-96.png" alt="CSS">
+                    <img class="skill" src="assests/icons8-javascript-96.png" alt="JavaScript">
+                </li>
+                <li class="skill-group">
+                    
+                </li>
+        
+                <li class="skill-group">
+                    <span class="category">Backend Frameworks:</span>
+                    <img class="skill" src="assests/icons8-logotipo-de-primavera-96.png" alt="Spring">
+                </li>
+        
+                <li class="skill-group">
+                    <span class="category">Data Bases:</span>
+                    <img class="skill" src="assests/icons8-mysql-96.png" alt="MySQL">
+                </li>
+            </ul>
         </section>
 
         <!-- Sección Proyectos -->
         <section id="projects" class="project1">
             <h1 class="title">Proyects</h1>
             <div class="gallery">
-                <button class="buttonProyect" onclick="redirect('https://github.com/Ruyllex')">
+                <div class="buttonProyect" onclick="redirect('https://github.com/Ruyllex/algo3_tp2')">
                     <img src="assests/algoDefense.png" alt="Imagen 1">
-                </button>
-                <button class="buttonProyect">
-                    <img src="assests/algoDefense.png" alt="Imagen 1">
-                </button>
-                <button class="buttonProyect">
-                    <img src="assests/algoDefense.png" alt="Imagen 1">
-                </button>
-                <button class="buttonProyect">
-                    <img src="assests/algoDefense.png" alt="Imagen 1">
-                </button>
-
-                <!-- Agrega más imágenes según sea necesario -->
-              </div>
+                    <div class="overlay">
+                        <h3>AlgoDefense</h3>
+                        <p>A tower defense game, made in <a style="color: red;">java</a>(<a style="color:orange">Maven</a>) with <a style="color: red;">java</a><a style="color: yellow;">fx</a> 
+                            for a college subject, a group of five people in which we apply <a style="color: rgb(0, 140, 255);">Scrum, eXtreme Programming</a> with <a style="color: white;">git</a> and  I used <a style="color: blueviolet;">intellij</a>, it has the corresponding documentation(classes,packages and sequence diagrams),coded with TDD using <a style="color: red;">J</a>unit.</p>
+                    </div>
+                </div>
+                <div class="buttonProyect" onclick="redirect('https://github.com/Ruyllex/TP1_sinergia/tree/cambios_main')">
+                    <img src="assests/hangman.png" alt="Imagen 1">
+                    <div class="overlay">
+                        <h3>Hangman</h3>
+                        <p>This is a game too, is one of my first proyects made for the college so don't expect much. It was made in <a style="color: blue;">Pyt</a><a style="color: yellow;">hon</a></p>
+                    </div>
+                </div>
 
         </section>
         <!-- Sección Contacto -->
@@ -86,7 +115,6 @@
                 <button class="btn-contacto">
                     <img onclick="redirect('https://twitter.com/RuyMori')" src="assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style="width: 50px; height: 40px; margin-left: 10px;">
                 </button>
-            
             </div>
         </section>
     </div>

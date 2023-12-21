@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap');
+
 
 
 body {
@@ -10,6 +13,7 @@ body {
     color: #33ff00;
     transition: background-color 0.3s;
     overflow: hiden;
+    flex-wrap: wrap;
 
   }
   
@@ -120,6 +124,7 @@ body {
   
 
  /* Proyects */
+ 
 
  .gallery {
   display: flex;
@@ -130,7 +135,9 @@ body {
 }
 
 .buttonProyect {
-  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  display: flex;
   padding: 0;
   margin: 5px;
   border: none;
@@ -144,8 +151,38 @@ body {
   transition: opacity 0.5s ease; 
 }
 
-.gallery img:hover{
-  opacity: 0.2;
+
+.buttonProyect:hover .overlay {
+  opacity: 1;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.94); 
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  text-align: center;
+  
+}
+
+
+.overlay h3 {
+  font-size: 50px;
+  font-family: 'Bebas Neue', sans-serif; 
+  color: #33ff00;
+  margin-bottom: 10px;
+}
+.overlay p {
+  font-family: 'DM Sans', sans-serif; 
+  color: #33ff00;
+  margin-bottom: 10px;
 }
 
 
@@ -263,5 +300,37 @@ body {
 }
 
 
+@media (max-width: 400px) {
+  body {
+    overflow: hidden;
+    font-size: 14px; 
+  }
 
+  .container {
+    width: 100%; 
+    padding: 1px; 
+  }
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; 
+}
+
+.category {
+  font-weight: bold;
+  font-size: 20px;
+  color: #007BFF;
+}
+
+.skill-group {
+  margin-right: 20px;
+  margin-bottom: 20px; 
+}
+
+.skill {
+  margin-right: 10px;
+}
 
