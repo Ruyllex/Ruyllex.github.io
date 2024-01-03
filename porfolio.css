@@ -45,7 +45,7 @@ body {
   }
   
   
-  .navbar {
+.navbar {
     margin-right: 20px;
     display: flex;
     width: 100%;
@@ -121,7 +121,16 @@ body {
     min-height: 100vh;
     overflow-y: scroll;
   }
-  
+
+  /* About Me*/
+
+ #aboutMe{
+  margin-left: 500px; 
+  color: bisque; 
+  margin-top: -160px; 
+  font-size: 20px; 
+  margin-right: 60px;
+ }
 
  /* Proyects */
  
@@ -193,6 +202,7 @@ body {
     text-align: center;
     padding: 10px 0;
     transition: background-color 0.3s;
+
   }
   
   
@@ -300,17 +310,6 @@ body {
 }
 
 
-@media (max-width: 400px) {
-  body {
-    overflow: hidden;
-    font-size: 14px; 
-  }
-
-  .container {
-    width: 100%; 
-    padding: 1px; 
-  }
-}
 
 .skills-list {
   list-style-type: none;
@@ -334,3 +333,58 @@ body {
   margin-right: 10px;
 }
 
+@media (max-width: 500px) {
+  body{
+    min-height: 30vh;
+  }
+  .menu li{
+    font-size: 14px;
+  }
+  #photo{
+    width: 80%;
+    height: 16%;
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+  .title{
+    font-size: 30px;
+  }
+  #fiuba-logo{
+    width: 70px;
+    height: 70px;
+    margin-left:30px;
+  }
+  p{
+    font-size: 15px;
+  }
+  #aboutMe{
+    font-size: 13px; 
+    margin-left: 40px;
+    color: bisque; 
+    margin-top: 20px;  
+    margin-right: 60px;
+
+  }
+  .skill{
+    width: 10%;
+  }
+  .category{
+    font-size: 10px;
+  }
+  .buttonProyect{
+    margin-left: 0%;
+  }
+  .btn-contacto{
+    width: 14.5%;
+  }
+  #WhatsAppIcon{
+    margin-left: 5px;
+  }
+  #twitter{
+    margin-left: 3px;
+  }
+  .contenedor{
+    justify-content: flex-end;
+  }
+
+}

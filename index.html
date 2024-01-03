@@ -10,12 +10,12 @@
 </head>
 <body>
     <!-- Encabezado -->
-    <header>
+    <header> 
         <nav class="navbar">
             <div class="icon">
                 <img id="Icon" alt="icon" src="assests/rm-low-resolution-logo-color-on-transparent-background-white.png">
             </div>
-            <ul class="menu">
+            <ul class="menu" id="mobile-menu">
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skill">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -32,10 +32,10 @@
         <section id="about">
             <h1 class="title">About me</h1>
             <img src="assests/Logo-fiuba_big.png" alt="fiuba-logo" id="fiuba-logo"></img>
-            <p style="margin-left: 500px; color: bisque; margin-top: -160px; font-size: 20px; margin-right: 60px;"> 
+            <p id="aboutMe"> 
                 Hi, welcome to my porfolio my name is <a style="color: #33ff00;">Ruy Mori<a>.<br> Student of Univerity of Buenos Aires, Studying Software Engineering. 
                 My pasion is the world of internet, one of my dreams is to work as a developer in the big tech companies as google, meta, amazon ...<br>
-                I like learn new things everyday and solve problems,I'm use to work on teamnm but also i like trying to solve challenges by my own.</p>
+                I like learn new things everyday and solve problems, I'm use to work on teamnm but also i like trying to solve challenges by my own.</p>
         </section>
         <section id="skill">
             <h1 class="title">Skills</h1>
@@ -78,11 +78,11 @@
                     <div class="overlay">
                         <h3>AlgoDefense</h3>
                         <p>A tower defense game, made in <a style="color: red;">java</a>(<a style="color:orange">Maven</a>) with <a style="color: red;">java</a><a style="color: yellow;">fx</a> 
-                            for a college subject, a group of five people in which we apply <a style="color: rgb(0, 140, 255);">Scrum, eXtreme Programming</a> with <a style="color: white;">git</a> and  I used <a style="color: blueviolet;">intellij</a>, it has the corresponding documentation(classes,packages and sequence diagrams),coded with TDD using <a style="color: red;">J</a>unit.</p>
+                            for a college subject, a group of five people in which we apply <a style="color: rgb(0, 140, 255);">Scrum, eXtreme Programming</a> with <a style="color: white;">git</a> and  I used <a style="color: blueviolet;">intellij</a>, it has the corresponding documentation(classes, packages and sequence diagrams), coded with TDD using <a style="color: red;">J</a>unit.</p>
                     </div>
                 </div>
                 <div class="buttonProyect" onclick="redirect('https://github.com/Ruyllex/TP1_sinergia/tree/cambios_main')">
-                    <img src="assests/hangman.png" alt="Imagen 1">
+                    <img src="assests/hangman.png" alt="Imagen 2">
                     <div class="overlay">
                         <h3>Hangman</h3>
                         <p>This is a game too, is one of my first proyects made for the college so don't expect much. It was made in <a style="color: blue;">Pyt</a><a style="color: yellow;">hon</a></p>
@@ -110,10 +110,10 @@
                     <img src="assests/facebookIcon.png" alt="Icono 3" style="width: 70px;height: 55px; margin-bottom: -3px;">
                 </button>
                 <button class="btn-contacto">
-                    <img onclick="redirect('https://wa.me/1149458922/')" src="assests/WhatsAppIcon.png" alt="Icono 3">
+                    <img onclick="redirect('https://wa.me/1149458922/')" src="assests/WhatsAppIcon.png" alt="Icono 3" id="WhatsAppIcon">
                 </button>
                 <button class="btn-contacto">
-                    <img onclick="redirect('https://twitter.com/RuyMori')" src="assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style="width: 50px; height: 40px; margin-left: 10px;">
+                    <img onclick="redirect('https://twitter.com/RuyMori')" src="assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style="width: 50px; height: 40px; margin-left: 10px;" id="twitter">
                 </button>
             </div>
         </section>
