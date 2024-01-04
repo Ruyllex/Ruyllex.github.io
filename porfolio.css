@@ -410,7 +410,7 @@ body {
     border: none;
     position: absolute;
     display: block;
-    margin-left: 390px;
+    margin-left: 330px;
     color: white;
   }
   .closeMenu{
@@ -420,8 +420,7 @@ body {
     color: white;
     border: none;
     display: block;
-    text-align: right;
-    margin-right: 15px;
+    text-align: center;
     margin-top: 4px;
   }
 
