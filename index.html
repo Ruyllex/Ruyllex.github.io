@@ -6,23 +6,26 @@
     <title>RM</title>
     <link rel="stylesheet" href="porfolio.css">
     <link rel="icon" href="assests/icono.ico" type="image/x-icon">
-    <script src = "porfolio.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 <body>
     <!-- Encabezado -->
     <header> 
+        <div class="icon">
+            <img id="Icon" alt="icon" src="assests/rm-low-resolution-logo-color-on-transparent-background-white.png">
+        </div>
+        <button class="openMenu" id="open"><i class="bi bi-list"></i></button>
         <nav class="navbar">
-            <div class="icon">
-                <img id="Icon" alt="icon" src="assests/rm-low-resolution-logo-color-on-transparent-background-white.png">
-            </div>
-            <ul class="menu" id="mobile-menu">
+            <ul class="menu" id="menu">
+                <li><button class="closeMenu" id="close"><i class="bi bi-x-lg"></i></button></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skill">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </header>  
     <div class="container">
         <!-- Portada -->
         <section class="Portada">
@@ -121,5 +124,6 @@
     <footer>
         <p>&copy; 2023 Ruy Mori</p>
     </footer>
+    <script src = "porfolio.js"></script>
 </body>
 </html>
