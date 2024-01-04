@@ -346,10 +346,11 @@ body {
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
     position: absolute;
     flex-direction: column;
-    top: 4px;
-    margin-right: 10px;
+    top: -1px;
+    margin-right: 2px;
     align-items: flex-end;
     background-color: #000000;
+    padding: 20px;
   }
   .menu.visible{
     display: flex;
@@ -365,15 +366,15 @@ body {
     font-size: 30px;
   }
   #fiuba-logo{
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     margin-left:30px;
   }
   p{
     font-size: 15px;
   }
   #aboutMe{
-    font-size: 13px; 
+    font-size: 20px; 
     margin-left: 40px;
     color: bisque; 
     margin-top: 20px;  
