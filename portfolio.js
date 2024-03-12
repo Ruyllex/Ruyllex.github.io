@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 index++;
                 setTimeout(agregarLetra, 200); 
             } else {
-                h2Elemento.innerHTML += "<a style='color: #33ff00;'>Porfolio</a>";
+                h2Elemento.innerHTML += "<a style='color: #33ff00;'>Portfolio</a>.";
                 h2Elemento.classList.add("h2");
                 setTimeout(function() {
                     textoElemento.removeChild(h2Elemento);
