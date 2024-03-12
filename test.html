@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajas de habilidades con imágenes</title>
+    <style>
+        .cards {
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        
+        gap: 15px;
+        }
+
+        .cards .red {
+        background-color: #33ff00;
+        }
+
+        .cards .blue {
+        background-color: #3b82f6;
+        }
+
+        .cards .green {
+        background-color: #22c55e;
+        }
+
+        .cards .card {
+        height: 400px;
+        width: 250px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: 400ms;
+        }
+
+        .cards .card p.tip {
+        font-size: 1em;
+        font-weight: 700;
+        }
+
+        .cards .card p.second-text {
+        font-size: .7em;
+        }
+
+        .cards .card:hover {
+        transform: scale(1.1, 1.1);
+        }
+
+        .cards:hover > .card:not(:hover) {
+        filter: blur(10px);
+        transform: scale(0.9, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="card red">
+            <p class="tip">Backend</p>
+            <img class="skill" src="assests/icons8-lenguaje-de-programación-96.png" alt="Java">
+            <img class="skill" src="assests/icons8-logotipo-de-c-plus-plus-96.png" alt="C++">
+            <img class="skill" src="assests/icons8-python-96.png" alt="Python">
+            
+        </div>
+        <div class="card blue">
+            <p class="tip">Frontend</p>
+            <img class="skill" src="assests/icons8-html-96.png" alt="HTML5">
+            <img class="skill"  src="assests/icons8-css3-96.png" alt="CSS">
+            <img class="skill" src="assests/icons8-javascript-96.png" alt="JavaScript">
+        </div>
+        <div class="card green">
+            <p class="tip">Tools</p>
+            <p class="second-text">Lorem Ipsum</p>
+        </div>
+    </div>
+</body>
+</html>

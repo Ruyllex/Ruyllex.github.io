@@ -101,7 +101,7 @@ body {
     width: 100%;
     left: 0;
     background-color: #33ff00;
-    transition: 0.3s;
+    transition: 0.4s;
     transition-timing-function: ease-in-out;
     transform: scaleX(0);
   }
@@ -122,19 +122,102 @@ body {
   }
 
   #title2 {
+    position: relative;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    margin-top: -180px;
     margin-left: 450px;
+    margin-top: -150px;
+  }
+
+
+  h2{
+    font-size: 30px;
+    margin-top: -150px;
   }
   
   #aboutMe {
-    display: flex;
-    flex-direction: column; /* Cambiado a column para que el texto aparezca debajo del nombre */
-    color: bisque;
+    flex-direction: column; 
+    color: white;
     font-size: 20px;
     max-width: 800px;
-    margin-left: 500px; 
+    margin-left: 450px; 
+  }
+
+
+
+   
+   
+
+
+
+/*   Skills   */
+
+
+
+
+button {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -40px;
+}
+
+button::before {
+  margin-left: auto;
+}
+
+button::after, button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #33ff00;
+  display: block;
+  transition: 0.5s;
+}
+
+button:hover::after, button:hover::before {
+  width: 100%;
+}
+
+
+.cards {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  background-color:#000000 ;
+  gap: 15px;
+  }
+
+  .cards .card {
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+  }
+
+  .cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+  }
+
+  .cards .card p.second-text {
+  font-size: .7em;
+  }
+
+  .cards .card:hover {
+  transform: scale(1.1, 1.1);
+  }
+
+  .cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
   }
 
  /* Proyects */
@@ -231,12 +314,14 @@ body {
     height: 28px;
     width: 90px;
     text-align: left;
+
   }
   .icon{
     text-align: left;
     padding: 0px;
     margin-left: 20px;
     margin-top: 10px;
+    position: absolute;
   }
   .line{
     margin-left: 60%;
@@ -291,7 +376,7 @@ body {
 #fiuba-logo{
   width: 200px;
   height: 200px;
-  margin-left: 200px;
+  margin-left: 140px;
   margin-top: 50px;
   animation: rotate 20s linear infinite;
 }
@@ -341,17 +426,11 @@ body {
   display: none;
 }
 
-@keyframes rotar {
-  0% { transform: rotate(-20deg); }
-  100% { transform: rotate(20deg); } /* Rotación de 45 grados */
-}
-
 #Foto{
   text-align: right;
   margin-left: 1200px;
   display: flex;
   border-radius: 100px;
-  animation: rotar 1s infinite alternate;
   width: auto;
   height: 30%;
 }
@@ -386,6 +465,7 @@ body {
     margin-top: 200px;
     margin-bottom: -100px;
   }
+
   .title{
     font-size: 30px;
   }
@@ -456,4 +536,7 @@ body {
     display:none;
   }
 
+}
+::-webkit-scrollbar {
+  display: none;
 }

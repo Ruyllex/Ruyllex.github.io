@@ -2,9 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RM</title>
-    <link rel="stylesheet" href="porfolio.css">
+    <link rel="stylesheet" href="portfolio.css">
+
     <link rel="icon" href="assests/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -15,7 +16,7 @@
         <div class="icon">
             <img id="Icon" alt="icon" src="assests/rm-low-resolution-logo-color-on-transparent-background-white.png">
         </div>
-        <button class="openMenu" id="open"><i class="bi bi-list"></i></button>
+        <button class="openMenu" id="open"> <i class="bi bi-list"></i></button>
         <nav class="navbar">
             <ul class="menu" id="menu">
                 <li><button class="closeMenu" id="close"><i class="bi bi-x-lg"></i></button></li>
@@ -35,45 +36,50 @@
         <section id="about">
             <h1 class="title">About me</h1>
             <img src="assests/Logo-fiuba_big.png" alt="fiuba-logo" id="fiuba-logo"></img>
-            <h2 id="title2">Hi, welcome to my porfolio my name is <a style="color: #33ff00;">Ruy Mori</a></h2>
+            <h2 id="title2">Hi, welcome to my <a style="color: #33ff00;">Portfolio</a>.</h2>
             <p id="aboutMe"> 
-                Student of Univerity of Buenos Aires, Studying Software Engineering. 
-                My pasion is the world of internet and programming, one of my dreams is to work as a developer in the big tech companies as google, meta, amazon ...<br>
-                I like learn new things everyday and solve problems, I'm use to work on teamnm but also i like trying to solve challenges by my own.</p>
-            <img src="assests/foto.png" alt="Ruy" id="Foto" class="imagen-animada"></img>
-            <p>
-                In my free time i like going to the gym,
-            </p>
+                My name is <a style="color: #33ff00;">R</a>uy <a style="color: #33ff00;">M</a>ori, a student of Informatic Engineering at the <a style="color: blue;">U</a>niversity of <a style="color: blue;">B</a>uenos <a style="color: blue;">A</a>ires. 
+                As an aspiring Game Developer, I find joy in crafting digital experiences that resonate with users. 
+                Beyond coding, I find balance through fitness and sports like baseball and soccer.</p>
         </section>
+        
         <section id="skill">
             <h1 class="title">Skills</h1>
-            <ul class="skills-list">
-                <li class="skill-group">
-                    <span class="category">Programming languages:</span>
+            <div class="cards">
+                <div class="card red">
+                    <p>
+                        <button class="skilss">
+                            Backend
+                        </button>
+                      </p>
                     <img class="skill" src="assests/icons8-lenguaje-de-programación-96.png" alt="Java">
                     <img class="skill" src="assests/icons8-logotipo-de-c-plus-plus-96.png" alt="C++">
                     <img class="skill" src="assests/icons8-python-96.png" alt="Python">
-                </li>
-        
-                <li class="skill-group">
-                    <span class="category">Frontend technologies:</span>
+                    <img class="skill" src="assests/icons8-logotipo-de-primavera-96.png" alt="Spring">
+                    
+                </div>
+                <div class="card blue">
+                    <p>
+                        <button class="skilss">
+                            Frontend
+                        </button>
+                      </p>
                     <img class="skill" src="assests/icons8-html-96.png" alt="HTML5">
                     <img class="skill"  src="assests/icons8-css3-96.png" alt="CSS">
                     <img class="skill" src="assests/icons8-javascript-96.png" alt="JavaScript">
-                </li>
-                <li class="skill-group">
-                    
-                </li>
-        
-                <li class="skill-group">
-                    <span class="category">Backend Frameworks:</span>
-                    <img class="skill" src="assests/icons8-logotipo-de-primavera-96.png" alt="Spring">
-                </li>
-        
-                <li class="skill-group">
-                    <span class="category">Data Bases:</span>
-                    <img class="skill" src="assests/icons8-mysql-96.png" alt="MySQL">
-                </li>
+                </div>
+                <div class="card green">
+                    <p>
+                    <button class="skilss"> 
+                        Tools
+                    </button>
+                    </p>
+                    <img class="skill" src="assests/icons8-visual-studio-code-2019-96.png" alt="HTML5">
+                    <img class="skill" src="assests/github_logo_icon_147285.png" style="width: 90px;" alt="git">
+                    <img class="skill" src="assests/icons8-intellij-idea-96.png" alt="intellij">
+                    <img class="skill" src="assests/icons8-linux-96.png" alt="sql">
+                </div>
+            </div>
             </ul>
         </section>
 
@@ -102,33 +108,33 @@
         <section id="contact">
             <h1 class="title">Contact</h1>
             <div class="contenedor">
-                <button class="btn-contacto">
+                <div class="btn-contacto">
                     <img onclick="redirect('https://www.instagram.com/ruy_mori/?next=%2F')" src="assests/INstragramIcon.png" alt="Icono 1" style="width: 60px; height: 60px; margin-bottom: -7px;" class="icono">
-                </button>
-                <button  class="btn-contacto">
+                </div>
+                <div  class="btn-contacto">
                     <img onclick="redirect('https://github.com/Ruyllex')" src="assests/github_logo_icon_147285.png" alt="Icono 2" style="margin-left: 5px;" class="icono">
-                </button>
-                <button class="btn-contacto">
+                </div>
+                <div class="btn-contacto">
                     <img onclick="redirect('')" src="assests/gamilIcon.png" alt="Icono 3" id="GMAILBUTTON">
-                </button>
-                <button class="btn-contacto">
+                </div> 
+                <div class="btn-contacto">
                     <img  onclick="redirect('https://www.linkedin.com/in/ruy-mori-112967259/')" src="assests/linkedinIcon.png" alt="Icono 3" style="width: 55px; margin-left: 15px;">
-                </button>
-                <button class="btn-contacto">
+                </div>
+                <div class="btn-contacto">
                     <img src="assests/facebookIcon.png" alt="Icono 3" style="width: 70px;height: 55px; margin-bottom: -3px;">
-                </button>
-                <button class="btn-contacto">
+                </div>
+                <div class="btn-contacto">
                     <img onclick="redirect('https://wa.me/1149458922/')" src="assests/WhatsAppIcon.png" alt="Icono 3" id="WhatsAppIcon">
-                </button>
-                <button class="btn-contacto">
+                </div>
+                <div class="btn-contacto">
                     <img onclick="redirect('https://twitter.com/RuyMori')" src="assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style="width: 50px; height: 40px; margin-left: 8px;" id="twitter">
-                </button>
+                </div>
             </div>
         </section>
     </div>
     <footer>
-        <p>&copy; 2023 Ruy Mori</p>
+        <p>&copy; Ruy Mori</p>
     </footer>
-    <script src = "porfolio.js"></script>
+    <script src = "portfolio.js"></script>
 </body>
 </html>
