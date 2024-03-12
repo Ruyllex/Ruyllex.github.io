@@ -220,7 +220,7 @@ button:hover::after, button:hover::before {
   transform: scale(0.9, 0.9);
   }
 
- /* Proyects */
+ /* Projects */
  
 
  .gallery {
@@ -231,7 +231,7 @@ button:hover::after, button:hover::before {
   margin-left: 10px;
 }
 
-.buttonProyect {
+.buttonProject {
   position: relative;
   overflow: hidden;
   display: flex;
@@ -242,14 +242,14 @@ button:hover::after, button:hover::before {
   cursor: pointer;
 }
 
-.buttonProyect img{
+.buttonProject img{
   width: 480px;
   height: auto;
   transition: opacity 0.5s ease; 
 }
 
 
-.buttonProyect:hover .overlay {
+.buttonProject:hover .overlay {
   opacity: 1;
 }
 
@@ -491,7 +491,7 @@ button:hover::after, button:hover::before {
   .category{
     font-size: 10px;
   }
-  .buttonProyect{
+  .buttonProject{
     margin-left: 0%;
   }
   .btn-contacto{
