@@ -144,17 +144,6 @@ body {
   }
 
 
-
-   
-   
-
-
-
-/*   Skills   */
-
-
-
-
 button {
   color: white;
   text-decoration: none;
@@ -284,6 +273,8 @@ button:hover::after, button:hover::before {
 
 
 /* Footer */
+
+
   footer {
     background-color: #333;
     color: #fff;
@@ -300,6 +291,9 @@ button:hover::after, button:hover::before {
   
   
 /* ICONS */
+
+
+
   #photo {
     display: block;
     width: 750px;
@@ -348,31 +342,43 @@ button:hover::after, button:hover::before {
   width: 50px;
   height: 50px;
 }
+
+
 #INSTABUTTON{
   margin-bottom: -15px;
   width: 80px; 
   height: 80px;
 }
+
+
 #GMAILBUTTON{
   margin-bottom: -5px;
   margin-left: 10px;
   width: 60px;
   height: 60px;
 }
+
+
 .contenedor {
   margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 #contact{
   height: 50vh;
 }
+
+
 .btn-contacto:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s;
 }
+
+
 #fiuba-logo{
   width: 200px;
   height: 200px;
@@ -380,6 +386,7 @@ button:hover::after, button:hover::before {
   margin-top: 50px;
   animation: rotate 20s linear infinite;
 }
+
 @keyframes rotate {
   from {
       transform: rotate(0deg);
@@ -400,13 +407,6 @@ button:hover::after, button:hover::before {
 }
 
 
-
-.skills-list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap; 
-}
 
 .category {
   font-weight: bold;
@@ -435,11 +435,53 @@ button:hover::after, button:hover::before {
   height: 30%;
 }
 
+.PhoneTitle{
+  display: none;
+}
+
 
 /*   Media Query   */
 
 
 @media (max-width: 500px) {
+
+  .PhoneTitle{
+    display:contents;
+    font-size: 18px;
+  }
+  .overlay h3{
+    font-size: 40px;
+    margin-top: 10px;
+  }
+  .overlay p{
+    font-size:12px;
+  }
+
+  .buttonProject{
+    width: 380px;
+    margin-left: 20px;
+    height: 180px;
+  }
+
+  button {
+    color: initial;
+    text-decoration: initial;
+    font-size: initial;
+    border: initial;
+    background: initial;
+    font-weight: initial;
+    font-family: initial;
+    margin-top: initial;
+  }
+  button::before,
+  button::after {
+    width: initial;
+    height: initial;
+    background: initial;
+    display: initial;
+    transition: initial;
+  }
+
 
   .menu {
     display: none;
@@ -486,8 +528,9 @@ button:hover::after, button:hover::before {
 
   }
   .skill{
-    width: 10%;
+    font-size: 10px;
   }
+
   .category{
     font-size: 10px;
   }
@@ -535,8 +578,13 @@ button:hover::after, button:hover::before {
   #Foto{
     display:none;
   }
+  #title2{
+    display: none;
+  }
 
 }
+
+
 ::-webkit-scrollbar {
   display: none;
 }
