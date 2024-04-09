@@ -588,3 +588,11 @@ button:hover::after, button:hover::before {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@media (min-width: 1300px)and (max-width: 1400px){
+  .buttonProject{
+    width: 420px;
+    margin-left: 20px;
+    height: auto;
+  }
+}
