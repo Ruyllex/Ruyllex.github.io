@@ -5,6 +5,12 @@
 
 
 body {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -124,11 +130,18 @@ body {
   #title2 {
     position: relative;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 450px;
-    margin-top: -150px;
+    margin-left: 451px;
+    margin-top: -170px;
+    font-size: 20px;
   }
 
+#NAME{
+  position: relative;
+  color: white;
+  margin-left: 448px;
+  font-size: 50px;
+  margin-top: -20px;
+}
 
   h2{
     font-size: 30px;
@@ -136,8 +149,9 @@ body {
   }
   
   #aboutMe {
+    margin-top: -50px;
     flex-direction: column; 
-    color: white;
+    color: rgba(255, 255, 255, 0.788);
     font-size: 20px;
     max-width: 800px;
     margin-left: 450px; 
@@ -172,6 +186,64 @@ button:hover::after, button:hover::before {
   width: 100%;
 }
 
+.btn {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+
+.btn-contacto:hover span.email {
+  display: inline; /* Muestra el span al pasar el cursor */
+}
+.btn-contacto span.email {
+  display: none; /* Oculta el span por defecto */
+}
 
 .cards {
   align-items: center;
@@ -229,12 +301,17 @@ button:hover::after, button:hover::before {
   border: none;
   background: none;
   cursor: pointer;
+
 }
 
 .buttonProject img{
   width: 480px;
   height: auto;
+  object-fit: cover; 
+  object-position: center; 
   transition: opacity 0.5s ease; 
+  top: 0;
+  left: 0;
 }
 
 
@@ -397,7 +474,7 @@ button:hover::after, button:hover::before {
 }
 
 #skill{
-  margin-top: 100px;
+  margin-top: -90px;
   align-items: center;
   color:#00ff00;
   font-size: 60px;
@@ -421,6 +498,7 @@ button:hover::after, button:hover::before {
 
 .skill {
   margin-right: 10px;
+  font-size: 10px;
 }
 .openMenu, .closeMenu{
   display: none;
@@ -438,12 +516,20 @@ button:hover::after, button:hover::before {
 .PhoneTitle{
   display: none;
 }
+.social-buttons{
+  display: none;
+}
 
 
 /*   Media Query   */
 
 
 @media (max-width: 500px) {
+  #Icon{
+    width: 60px;
+    height: 20px;
+    margin-right: 100px;
+  }
 
   .PhoneTitle{
     display:contents;
@@ -458,10 +544,27 @@ button:hover::after, button:hover::before {
   }
 
   .buttonProject{
-    width: 380px;
-    margin-left: 20px;
-    height: 180px;
+    width: 370px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    padding: 0;
+    margin-top: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
   }
+  .buttonProject img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    transition: opacity 0.5s ease; 
+    top: 0;
+    left: 0;
+  }
+
 
   button {
     color: initial;
@@ -511,44 +614,50 @@ button:hover::after, button:hover::before {
   .title{
     font-size: 30px;
   }
-  #fiuba-logo{
-    width: 100px;
-    height: 100px;
-    margin-left:30px;
-  }
-  p{
+  #title2{
     font-size: 15px;
+    margin-left: 43px;
+    position: relative;
+    margin-top: 50px;
+  }
+
+  #NAME{
+    font-size: 35px;
+    margin-top: -18px;
+    margin-left: 40px;
+    position: absolute;
+  }
+
+
+  #fiuba-logo{
+    display: none;
   }
   #aboutMe{
-    font-size: 20px; 
+    font-size: 15px; 
     margin-left: 40px;
-    color: bisque; 
-    margin-top: 20px;  
+    color: rgba(255, 228, 196, 0.804); 
+    margin-top: 50px;  
     margin-right: 60px;
 
   }
-  .skill{
-    font-size: 10px;
+  .cards{
+    margin-top: -120px;
   }
 
   .category{
     font-size: 10px;
   }
-  .buttonProject{
-    margin-left: 0%;
-  }
   .btn-contacto{
     width: 14.5%;
   }
-  #WhatsAppIcon{
-    margin-left: 5px;
-  }
+  
   #twitter{
     margin-left: 3px;
   }
+
   .contenedor{
-    
-    justify-content: flex-end;
+    display: flex;
+    align-items: center;  
   }
   i{
     font-size: 150%;
@@ -578,11 +687,90 @@ button:hover::after, button:hover::before {
   #Foto{
     display:none;
   }
-  #title2{
+  .contenedor{
     display: none;
   }
-
 }
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #00000027;
+  transition: 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.facebook svg {
+  fill: #f2f2f2;
+}
+
+.facebook:hover svg {
+  fill: #3b5998;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.instagram {
+  background-color: #c13584;
+}
+
+.instagram svg {
+  fill: #f2f2f2;
+}
+
+.instagram:hover svg {
+  fill: #c13584;
+}
+
 
 
 ::-webkit-scrollbar {

@@ -33,42 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const textoElemento = document.getElementById("title2");
-    const textoCompleto = "Hi, welcome to my ";
-
-    function escribirTexto() {
-        const h2Elemento = document.createElement("h2");
-        let textoConEfecto = '';
-        let index = 0;
-
-        while (textoElemento.firstChild) {
-            textoElemento.removeChild(textoElemento.firstChild);
-        }
-
-        function agregarLetra() {
-            if (index < textoCompleto.length) {
-                textoConEfecto += textoCompleto.charAt(index);
-                h2Elemento.innerHTML = textoConEfecto;
-                index++;
-                setTimeout(agregarLetra, 200); 
-            } else {
-                h2Elemento.innerHTML += "<a style='color: #33ff00;'>Portfolio</a>.";
-                h2Elemento.classList.add("h2");
-                setTimeout(function() {
-                    textoElemento.removeChild(h2Elemento);
-                    escribirTexto(); 
-                }, 5000);
-            }
-        }
-
-        agregarLetra();
-
-        textoElemento.appendChild(h2Elemento); 
-    }
-    setTimeout(escribirTexto, 5000);
-});
-
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
