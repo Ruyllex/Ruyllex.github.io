@@ -93,4 +93,15 @@ window.addEventListener('scroll', () => {
   });
 
 });
-document.querySelector('.social-buttons').style.display = 'none';
+
+function checkMediaQuery() {
+  if (window.matchMedia("(max-width: 500px)").matches) {
+    document.querySelector('.social-buttons').style.display = 'true';
+  } else {
+      document.querySelector('.social-buttons').style.display = 'none';
+  }
+}
+
+checkMediaQuery();
+
+window.addEventListener('resize', checkMediaQuery);

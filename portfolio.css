@@ -518,6 +518,9 @@ button:hover::after, button:hover::before {
   display: none;
 }
 
+.social-buttons {
+  display: none; /* Oculta el div por defecto */
+}
 
 /*   Media Query   */
 
