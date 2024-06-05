@@ -721,17 +721,6 @@ button:hover::after, button:hover::before {
   height: 20px;
 }
 
-.facebook {
-  background-color: #3b5998;
-}
-
-.facebook svg {
-  fill: #f2f2f2;
-}
-
-.facebook:hover svg {
-  fill: #3b5998;
-}
 
 .github {
   background-color: #333;
