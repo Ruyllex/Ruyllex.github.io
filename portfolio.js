@@ -93,3 +93,4 @@ window.addEventListener('scroll', () => {
   });
 
 });
+document.querySelector('.social-buttons').style.display = 'none';

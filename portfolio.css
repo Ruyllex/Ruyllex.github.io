@@ -349,6 +349,7 @@ button:hover::after, button:hover::before {
 }
 
 
+
 /* Footer */
 
 
@@ -514,9 +515,6 @@ button:hover::after, button:hover::before {
 }
 
 .PhoneTitle{
-  display: none;
-}
-.social-buttons{
   display: none;
 }
 
