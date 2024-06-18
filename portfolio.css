@@ -249,6 +249,7 @@ button:hover::after, button:hover::before {
   align-items: center;
   text-align: center;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-around;
   background-color:#000000 ;
   gap: 15px;
@@ -545,13 +546,14 @@ button:hover::after, button:hover::before {
   }
 
   .buttonProject{
-    width: 370px;
-    height: 160px;
+    width: 100%;
+    height: 40%;
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-wrap: nowrap;
     padding: 0;
-    margin-top: 5px;
+    margin-top: auto;
     border: none;
     background: none;
     cursor: pointer;
@@ -603,6 +605,7 @@ button:hover::after, button:hover::before {
   }
   .menu.visible{
     display: flex;
+    flex-wrap: nowrap;
     opacity: 1;
   }
   #photo{
@@ -691,7 +694,11 @@ button:hover::after, button:hover::before {
   .contenedor{
     display: none;
   }
+.cards{
+  pointer-events: none;
 }
+
+
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -701,6 +708,7 @@ button:hover::after, button:hover::before {
 
 .social-button {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   width: 50px;
@@ -761,10 +769,11 @@ button:hover::after, button:hover::before {
   fill: #c13584;
 }
 
-
-
+    
+ 
 ::-webkit-scrollbar {
   display: none;
+}
 }
 
 @media (min-width: 1300px)and (max-width: 1400px){
