@@ -42,54 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll('.section');  
-    let index = 0;
-    function scrollToNextSection() {
-      if (index < sections.length - 1) {  
-        index++;
-        sections[index].scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  
-  
-    if (navigator.userAgent.indexOf("Microsoft IE") > -1) {
-      document.addEventListener('mousewheel', function(event) {
-        if (event.wheelDeltaY > 0) {
-            scrollToNextSection();
-         }  
-      });
-    } else {
-      window.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) {
-          scrollToNextSection();
-        }
-      });
-    }
-  });
-
-
-
-  const parallaxImages = document.querySelectorAll('.parallax-image');
-
-
-window.addEventListener('scroll', () => {
-
-  parallaxImages.forEach(image => {
-
-    const imageTop = image.getBoundingClientRect().top;
-
-    const scrollTop = window.pageYOffset;
-
-    const parallaxAmount = (imageTop - scrollTop) * 0.3;
-
-
-    image.style.transform = `translateY(${parallaxAmount}px)`;
-
-  });
-
-});
-
 function checkMediaQuery() {
   if (window.matchMedia("(max-width: 500px)").matches) {
     document.querySelector('.social-buttons').style.display = 'true';
