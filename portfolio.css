@@ -26,14 +26,30 @@ body {
   }
   
   header {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    transition: background-color 0.3s;
+    transition: background-color 0.5s,height 0.8s;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; 
+    height: 100px;
   }
+  header.shrink h1 {
+    font-size: 1.5rem; 
+    margin: 15px;
+}
+  header.shrink {
+  height: 80px; 
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5); 
+}
   
+  header.shrink .navbar {
+  margin: 10px;
+}
   header:hover {
     background-color: #121212;
   }
@@ -47,6 +63,10 @@ body {
   header:hover h1 {
     color: #33ff00;
   }
+
+  header.shrink .icon img {
+    width: 15px;
+}
   
 .navbar {
     text-align: right;
@@ -314,8 +334,15 @@ button:hover::after, button:hover::before {
   border: none;
   background: none;
   cursor: pointer;
-
+  opacity: 0; 
+  transform: translateY(50px); 
+  transition: transform 1.5s ease-out, opacity 1.2s ease-out;
 }
+.buttonProject.appear {
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
 
 .buttonProject img{
   width: 480px;
@@ -383,8 +410,9 @@ button:hover::after, button:hover::before {
   
 /* ICONS */
 
-.portada{
-  align-items: center;
+.Portada {
+  height: calc(100vh - 80px); 
+  margin-top: 80px; 
 }
 
 #photo {
@@ -398,7 +426,6 @@ button:hover::after, button:hover::before {
 
   #Icon {
     width: 7vw;  
-    height: 4vh; 
     margin-right: 5vw; 
     transition: all 0.3s ease;
 }
@@ -408,6 +435,7 @@ button:hover::after, button:hover::before {
     margin-left: 20px;
     margin-top: 10px;
     position: absolute;
+    height: auto;
   }
   .line{
     margin-left: 60%;

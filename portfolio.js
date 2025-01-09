@@ -2,6 +2,18 @@ const menu = document.querySelector("#menu");
 const open = document.querySelector("#open");
 const close = document.querySelector("#close");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) { 
+          header.classList.add("shrink");
+      } else {
+          header.classList.remove("shrink");
+      }
+  });
+});
+
 function toggleMenu(isOpen) {
     if (isOpen) {
         menu.classList.add("visible");
@@ -68,4 +80,22 @@ const hiddenElements = document.querySelectorAll('.hidden');
 
 hiddenElements.forEach((el) => {
   observer.observe(el);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projectItems = document.querySelectorAll(".buttonProject");
+
+  const toggleVisibilityOnScroll = () => {
+      projectItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+              item.classList.add("appear");
+          } else {
+              item.classList.remove("appear");
+          }
+      });
+  };
+
+  window.addEventListener("scroll", toggleVisibilityOnScroll);
+  toggleVisibilityOnScroll(); 
 });
