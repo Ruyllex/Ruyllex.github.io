@@ -685,8 +685,29 @@ button:hover::after, button:hover::before {
     margin-right: 60px;
 
   }
-  .cards{
-    margin-top: -120px;
+  .cards {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: space-around; 
+    gap: 2px;
+  }
+
+  .card {
+    min-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center; 
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  .skill {
+    width: 60px; 
+    height: auto;
+    margin: 5px 0; 
+    display: block;
   }
 
   .category{
@@ -735,9 +756,6 @@ button:hover::after, button:hover::before {
   .contenedor{
     display: none;
   }
-.cards{
-  pointer-events: none;
-}
 
 
 .social-buttons {
@@ -815,6 +833,9 @@ button:hover::after, button:hover::before {
 ::-webkit-scrollbar {
   display: none;
 }
+.skills{
+  display: none;
+} 
 }
 
 @media (min-width: 1300px)and (max-width: 1400px){
