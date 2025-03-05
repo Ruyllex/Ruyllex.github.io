@@ -525,7 +525,19 @@ button:hover::after, button:hover::before {
   position: relative;
   text-align: center;
 }
-
+@keyframes translateThenRotate {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 
 .category {
@@ -542,7 +554,77 @@ button:hover::after, button:hover::before {
 .skill {
   margin-right: 10px;
   font-size: 60px;
+  transition: filter 0.4s ease, transform 1.5s ease-out, opacity 1.2s ease-out;
+  opacity: 0;
+  transform: translateY(50px) ;
 }
+
+
+.skill.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill.java {
+  filter: none;
+}
+
+.skill.spring {
+  filter: none;
+}
+
+.skill.python {
+  filter: none;
+}
+
+.skill.flask {
+  filter: none;
+}
+
+.skill.nextjs {
+  filter: none;
+}
+
+.skill.react {
+  filter: none;
+  animation: translateThenRotate 3s ease-out forwards, rotate 20s linear infinite;
+}
+
+.skill.java:hover {
+  filter: drop-shadow(0 4px 8px rgba(255, 0, 0, 0.5)); /* Red for Java */
+}
+
+.skill.spring:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 255, 0, 0.5)); /* Green for Spring */
+}
+
+.skill.python:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 47, 255, 0.5)); /* Blue for Python */
+} 
+
+.skill.flask:hover {
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.5)); /* White for Flask */
+}
+
+.skill.nextjs:hover {
+  filter: drop-shadow(0 4px 8px rgba(236, 236, 236, 0.642)); /* White for Next.js */
+}
+
+.skill.react:hover {
+  filter: drop-shadow(0 4px 8px rgba(97, 218, 251, 0.5)); /* Light Blue for React */
+}
+
+.skilss {
+  transition: transform 1.5s ease-out, opacity 1.2s ease-out;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.skilss.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .openMenu, .closeMenu{
   display: none;
 }

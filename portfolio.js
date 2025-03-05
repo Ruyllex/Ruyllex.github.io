@@ -84,9 +84,29 @@ hiddenElements.forEach((el) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const projectItems = document.querySelectorAll(".buttonProject");
+  const skillItems = document.querySelectorAll(".skill");
+  const skillTitles = document.querySelectorAll(".skilss");
 
   const toggleVisibilityOnScroll = () => {
       projectItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+              item.classList.add("appear");
+          } else {
+              item.classList.remove("appear");
+          }
+      });
+
+      skillItems.forEach((item) => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
+              item.classList.add("appear");
+          } else {
+              item.classList.remove("appear");
+          }
+      });
+
+      skillTitles.forEach((item) => {
           const rect = item.getBoundingClientRect();
           if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
               item.classList.add("appear");
