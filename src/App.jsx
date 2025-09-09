@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import './App.css'
 
 function Header({ onNavigate }) {
   const [isShrink, setIsShrink] = useState(false)
@@ -266,7 +265,7 @@ function App() {
               <img onClick={() => redirect('https://twitter.com/RuyMori')} src="/assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style={{ width: '50px', height: '40px', marginLeft: '8px' }} id="twitter" />
             </div>
           </div>
-          <div className="social-buttons" hidden>
+          <div className="social-buttons">
             <a href="#" className="social-button github" onClick={() => redirect('https://github.com/Ruyllex')}>
               {/* SVG omitted in React for brevity; consider using inline SVG or img */}
             </a>
