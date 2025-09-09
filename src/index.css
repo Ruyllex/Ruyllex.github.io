@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&display=swap');
+
+#particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+body { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-family: Arial, sans-serif; min-height: 100vh; margin: 0; padding: 0; background-color: #1e1e1e; color: #33ff00; transition: background-color 0.3s; flex-wrap: wrap; }
+body:hover { background-color: #000000; }
+header { background-color: rgba(0,0,0,0.8); color: #fff; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.5s,height 0.8s; position: fixed; width: 100%; z-index: 1000; height: 100px; }
+header.shrink h1 { font-size: 1.5rem; margin: 15px; }
+header.shrink { height: 80px; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.5); }
+header.shrink .navbar { margin: 10px; }
+header:hover { background-color: #121212; }
+header h1 { margin: 30px; font-size: 2rem; transition: color 0.3s; }
+header:hover h1 { color: #33ff00; }
+header.shrink .icon img { width: 15px; }
+.navbar { text-align: right; display: flex; justify-content: flex-end; width: 100%; margin: 20px; }
+.icon img { width: 20px; height: auto; }
+.menu { list-style: none; display: flex; gap: 20px; }
+.menu li { font-size: 24px; font-family: 'Montserrat', sans-serif; }
+.menu li a { text-decoration: none; color: #fff; transition: color 0.3s ease-in-out; }
+.menu li a:hover { color: #33ff00; }
+.hidden { opacity: 0; transition: all 2s; filter: blur(5px); transform: translateX(-100%); }
+.show { opacity: 1; filter: blur(0); transform: translateX(0); }
+.title { padding: 40px 0; font-family: 'Montserrat', sans-serif; font-size: 3rem; color: #33ff00; margin-bottom: 20px; position: relative; text-align: center; }
+.title::after { font-family: 'Montserrat', sans-serif; font-size: 50px; content: ""; position: absolute; bottom: -5px; height: 4px; width: 100%; left: 0; background-color: #33ff00; transition: 0.4s; transition-timing-function: ease-in-out; transform: scaleX(0); }
+.title:hover::after { transform: scaleX(1); }
+section { height: 100vh; width: 100vw; scroll-snap-align: start; justify-content: center; align-items: center; overflow-y: scroll; overflow: hidden; }
+.container { min-height: 100vh; overflow: hidden; }
+#title2 { position: relative; color: white; margin-left: 451px; margin-top: -170px; font-size: 20px; }
+#NAME { position: relative; color: white; margin-left: 448px; font-size: 50px; margin-top: -20px; }
+h2 { font-size: 5vw; margin-top: -150px; }
+#aboutMe { margin-top: -50px; flex-direction: column; color: rgba(255,255,255,0.788); font-size: 20px; max-width: 800px; margin-left: 450px; }
+button { color: white; text-decoration: none; font-size: 40px; border: none; background: none; font-weight: 600; font-family: 'Montserrat', sans-serif; margin-top: -40px; }
+button::before { margin-left: auto; }
+button::after, button::before { content: ''; width: 0%; height: 2px; background: #33ff00; display: block; transition: 0.5s; }
+button:hover::after, button:hover::before { width: 100%; }
+.btn { font-size: 17px; background: transparent; border: none; padding: 1em 1.5em; color: #ffedd3; text-transform: uppercase; position: relative; transition: 0.5s ease; cursor: pointer; margin-top: 10px; }
+.btn::before { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background-color: #ffc506; transition: 0.5s ease; }
+.btn:hover { color: #1e1e2b; transition-delay: 0.5s; }
+.btn:hover::before { width: 100%; }
+.btn::after { content: ""; position: absolute; left: 0; bottom: 0; height: 0; width: 100%; background-color: #ffc506; transition: 0.4s ease; z-index: -1; }
+.btn:hover::after { height: 100%; transition-delay: 0.4s; color: aliceblue; }
+.cards { align-items: center; text-align: center; display: flex; flex-wrap: nowrap; justify-content: space-around; background-color:#000000; gap: 15px; }
+.cards .card { height: 400px; width: 250px; border-radius: 10px; color: white; cursor: pointer; transition: 400ms; }
+.cards .card p.tip { font-size: 2em; font-weight: 700; }
+.cards .card p.second-text { font-size: .7em; }
+.cards .card:hover { transform: scale(1.1, 1.1); }
+.cards:hover > .card:not(:hover) { filter: blur(10px); transform: scale(0.9, 0.9); }
+.gallery { display: flex; flex-wrap: wrap; padding: 0%; margin-top: 100px; margin-left: auto; margin-right: auto; justify-content: center; }
+.buttonProject { position: relative; overflow: hidden; display: flex; padding: 0; margin: 5px; border: none; background: none; cursor: pointer; opacity: 0; transform: translateY(50px); transition: transform 1.5s ease-out, opacity 1.2s ease-out; }
+.buttonProject.appear { opacity: 1; transform: translateY(0); }
+.buttonProject img { width: 480px; height: auto; object-fit: cover; object-position: center; transition: opacity 0.5s ease; top: 0; left: 0; }
+.buttonProject:hover .overlay { opacity: 1; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.7s ease; text-align: center; }
+.overlay h3 { font-size: 50px; font-family: 'Bebas Neue', sans-serif; color: #33ff00; margin-bottom: 10px; }
+.overlay p { font-family: 'DM Sans', sans-serif; color: #33ff00; margin-bottom: 10px; }
+footer { background-color: #333; color: #fff; text-align: center; padding: 10px 0; transition: background-color 0.3s; }
+footer:hover { background-color: #222; }
+.Portada { height: calc(100vh - 80px); margin-top: 80px; }
+#photo { display: block; width: 50vw; height: auto; margin-top: 20vh; margin-left: 45vh; transition: all 0.3s ease; }
+#Icon { width: 7vw; margin-right: 5vw; transition: all 0.3s ease; }
+.icon { text-align: left; padding: 0px; margin-left: 20px; margin-top: 10px; position: absolute; height: auto; }
+.btn-contacto { background: none; border: none; cursor: pointer; }
+.btn-contacto img { width: 50px; height: 50px; }
+.contenedor { margin-top: 80px; display: flex; justify-content: center; align-items: center; }
+#contact { height: 50vh; }
+#fiuba-logo { width: 200px; height: 200px; margin-left: 140px; margin-top: 50px; animation: rotate 20s linear infinite; }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+#skill { margin-top: -90px; align-items: center; color:#00ff00; font-size: 60px; font-family: 'Montserrat', sans-serif; position: relative; text-align: center; }
+@keyframes translateThenRotate { 0% { transform: translateY(50px); opacity: 0; } 50% { transform: translateY(0px); opacity: 1; } 100% { transform: translateY(0px); } }
+.skill { margin-right: 10px; font-size: 60px; transition: filter 0.4s ease, transform 1.5s ease-out, opacity 1.2s ease-out; opacity: 0; transform: translateY(50px); }
+.skill.appear { opacity: 1; transform: translateY(0); }
+.skill.react { filter: none; animation: translateThenRotate 3s ease-out forwards, rotate 20s linear infinite; }
+.skilss { transition: transform 1.5s ease-out, opacity 1.2s ease-out; opacity: 0; transform: translateY(50px); }
+.skilss.appear { opacity: 1; transform: translateY(0); }
+.openMenu, .closeMenu { display: none; }
+.PhoneTitle { display: none; }
+.social-buttons { display: none; }
+@media (max-width: 500px) {
+  #Icon { width: 60px; height: 20px; margin-right: 100px; }
+  .PhoneTitle { display: contents; font-size: 18px; }
+  .overlay h3 { font-size: 40px; margin-top: 10px; }
+  .overlay p { font-size: 12px; }
+  .buttonProject { width: 100%; height: 20vh; position: relative; overflow: hidden; display: flex; flex-wrap: nowrap; padding: 0; border: none; background: none; cursor: pointer; }
+  .buttonProject img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: opacity 0.5s ease; top: 0; left: 0; }
+  button { color: initial; text-decoration: initial; font-size: initial; border: initial; background: initial; font-weight: initial; font-family: initial; margin-top: initial; }
+  button::before, button::after { width: initial; height: initial; background: initial; display: initial; transition: initial; }
+  .menu { display: none; opacity: 0; transition: opacity 1s ease-in-out; border-radius: 5%; box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7); position: absolute; flex-direction: column; top: -1px; margin-right: 2px; align-items: flex-end; background-color: #000000; padding: 20px; }
+  .menu.visible { display: flex; flex-wrap: nowrap; opacity: 1; }
+  #photo { width: 85%; height: 16%; margin-top: 200px; margin-bottom: -100px; margin-left: 3.8vh; }
+  .title { font-size: 30px; }
+  #title2 { font-size: 15px; margin-left: 43px; position: relative; margin-top: 50px; }
+  #NAME { font-size: 35px; margin-top: -18px; margin-left: 40px; position: absolute; }
+  #fiuba-logo { display: none; }
+  #aboutMe { font-size: 15px; margin-left: 40px; color: rgba(255, 228, 196, 0.804); margin-top: 50px; margin-right: 60px; }
+  .cards { display: flex; flex-wrap: nowrap; justify-content: space-around; gap: 2px; }
+  .card { min-width: 200px; height: auto; border-radius: 10px; padding: 10px; text-align: center; font-size: 14px; display: flex; flex-direction: column; align-items: center; }
+  .skill { width: 60px; height: auto; margin: 5px 0; display: block; }
+  .btn-contacto { width: 14.5%; }
+  #twitter { margin-left: 3px; }
+  .contenedor { display: flex; align-items: center; }
+  i { font-size: 150%; }
+  .openMenu { background-color: transparent; border: none; position: absolute; display: block; margin-left: 330px; color: white; }
+  .closeMenu { width: 20px; height: 20px; background-color: transparent; color: white; border: none; display: block; text-align: center; margin-top: 4px; }
+  header { padding: 10px; }
+  .contenedor { display: none; }
+  .social-buttons { display: flex; justify-content: center; align-items: center; margin-top: 80px; }
+  .social-button { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; width: 50px; height: 50px; border-radius: 50%; margin: 0 10px; background-color: #fff; box-shadow: 0px 0px 4px #00000027; transition: 0.3s; }
+  .social-button:hover { background-color: #f2f2f2; box-shadow: 0px 0px 6px 3px #00000027; }
+  .social-buttons svg { transition: 0.3s; height: 20px; }
+  .github { background-color: #333; }
+  .github svg { width: 25px; height: 25px; fill: #f2f2f2; }
+  .github:hover svg { fill: #333; }
+  .linkedin { background-color: #0077b5; }
+  .linkedin svg { fill: #f2f2f2; }
+  .linkedin:hover svg { fill: #0077b5; }
+  .instagram { background-color: #c13584; }
+  .instagram svg { fill: #f2f2f2; }
+  .instagram:hover svg { fill: #c13584; }
+}
+::-webkit-scrollbar { display: none; }
