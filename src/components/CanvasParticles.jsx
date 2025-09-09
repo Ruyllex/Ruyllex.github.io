@@ -1,55 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import useIntersectionAnimation from './hooks/useIntersectionAnimation'
-import { Header, CanvasParticles, Hero, About, Skills, Projects, Contact, Footer } from './components'
+import { useEffect, useRef } from 'react'
 
-function HeaderOld({ onNavigate }) {
-  const [isShrink, setIsShrink] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsShrink(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleAnchorClick = (e, id) => {
-    e.preventDefault()
-    const target = document.querySelector(id)
-    if (target) target.scrollIntoView({ behavior: 'smooth' })
-    setMenuOpen(false)
-    if (onNavigate) onNavigate(id)
-  }
-
-  return (
-    <header className={isShrink ? 'shrink' : ''}>
-      <div className="icon">
-        <img id="Icon" alt="icon" src="/assests/rm-low-resolution-logo-color-on-transparent-background-white.png" />
-      </div>
-      <button className="openMenu" onClick={() => setMenuOpen(true)}>
-        <i className="bi bi-list" />
-      </button>
-      <nav className="navbar">
-        <ul className={`menu ${menuOpen ? 'visible' : ''}`}>
-          <li>
-            <button className="closeMenu" onClick={() => setMenuOpen(false)}>
-              <i className="bi bi-x-lg" />
-            </button>
-          </li>
-          <li><a href="#about" onClick={(e) => handleAnchorClick(e, '#about')}>About Me</a></li>
-          <li><a href="#skill" onClick={(e) => handleAnchorClick(e, '#skill')}>Skills</a></li>
-          <li><a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>Projects</a></li>
-          <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-  )
-}
-
-// kept temporarily during refactor; replaced by component imports
-
-function CanvasParticlesOld() {
+function CanvasParticles() {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -84,7 +35,6 @@ function CanvasParticlesOld() {
         this.density = Math.random() * 30 + 1
         this.speedX = Math.random() * 2 - 1
         this.speedY = Math.random() * 2 - 1
-        this.color = '#33ff00'
         this.alpha = Math.random() * 0.5 + 0.1
       }
       update() {
@@ -129,10 +79,7 @@ function CanvasParticlesOld() {
     }
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      particles.forEach((p) => {
-        p.update()
-        p.draw()
-      })
+      particles.forEach((p) => { p.update(); p.draw() })
       animationId = requestAnimationFrame(animate)
     }
 
@@ -152,28 +99,5 @@ function CanvasParticlesOld() {
   return <canvas id="particles" ref={canvasRef} />
 }
 
-function App() {
-  useIntersectionAnimation('.hidden', 'show')
-  useIntersectionAnimation('.buttonProject', 'appear')
-  useIntersectionAnimation('.skill', 'appear')
-  useIntersectionAnimation('.skilss', 'appear')
+export default CanvasParticles
 
-  const redirect = (url) => window.location.assign(url)
-
-  return (
-    <>
-      <CanvasParticles />
-      <Header />
-      <div className="container">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
-      <Footer />
-    </>
-  )
-}
-
-export default App
