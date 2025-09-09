@@ -5,7 +5,7 @@
 #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
 body { -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; font-family: Arial, sans-serif; min-height: 100vh; margin: 0; padding: 0; background-color: #1e1e1e; color: #33ff00; transition: background-color 0.3s; flex-wrap: wrap; }
 body:hover { background-color: #000000; }
-header { background-color: rgba(0,0,0,0.8); color: #fff; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.5s,height 0.8s; position: fixed; width: 100%; z-index: 1000; height: 100px; }
+header { background-color: rgba(0,0,0,0.8); color: #fff; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.5s,height 0.8s; position: fixed; width: 100%; z-index: 1000; height: 100px; top: 0; left: 0; }
 header.shrink h1 { font-size: 1.5rem; margin: 15px; }
 header.shrink { height: 80px; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.5); }
 header.shrink .navbar { margin: 10px; }
@@ -26,10 +26,12 @@ header.shrink .icon img { width: 15px; }
 .title:hover::after { transform: scaleX(1); }
 section { height: 100vh; width: 100vw; scroll-snap-align: start; justify-content: center; align-items: center; overflow-y: scroll; overflow: hidden; }
 .container { min-height: 100vh; overflow: hidden; }
-#title2 { position: relative; color: white; margin-left: 451px; margin-top: -170px; font-size: 20px; }
-#NAME { position: relative; color: white; margin-left: 448px; font-size: 50px; margin-top: -20px; }
+h1, h2, h3, p { margin-top: 0; }
+section[id] { scroll-margin-top: 100px; }
+#title2 { position: relative; color: white; margin-left: 451px; margin-top: -170px; font-size: 20px; z-index: 1; }
+#NAME { position: relative; color: white; margin-left: 448px; font-size: 50px; margin-top: -20px; z-index: 1; }
 h2 { font-size: 5vw; margin-top: -150px; }
-#aboutMe { margin-top: -50px; flex-direction: column; color: rgba(255,255,255,0.788); font-size: 20px; max-width: 800px; margin-left: 450px; }
+#aboutMe { margin-top: -50px; flex-direction: column; color: rgba(255,255,255,0.788); font-size: 20px; max-width: 800px; margin-left: 450px; position: relative; z-index: 1; }
 button { color: white; text-decoration: none; font-size: 40px; border: none; background: none; font-weight: 600; font-family: 'Montserrat', sans-serif; margin-top: -40px; }
 button::before { margin-left: auto; }
 button::after, button::before { content: ''; width: 0%; height: 2px; background: #33ff00; display: block; transition: 0.5s; }
@@ -56,15 +58,15 @@ button:hover::after, button:hover::before { width: 100%; }
 .overlay p { font-family: 'DM Sans', sans-serif; color: #33ff00; margin-bottom: 10px; }
 footer { background-color: #333; color: #fff; text-align: center; padding: 10px 0; transition: background-color 0.3s; }
 footer:hover { background-color: #222; }
-.Portada { height: calc(100vh - 80px); margin-top: 80px; }
-#photo { display: block; width: 50vw; height: auto; margin-top: 20vh; margin-left: 45vh; transition: all 0.3s ease; }
+.Portada { min-height: calc(100vh - 100px); padding-top: 100px; box-sizing: border-box; }
+#photo { display: block; width: 50vw; height: auto; margin-top: 10vh; margin-left: 45vh; transition: all 0.3s ease; position: relative; z-index: 0; }
 #Icon { width: 7vw; margin-right: 5vw; transition: all 0.3s ease; }
 .icon { text-align: left; padding: 0px; margin-left: 20px; margin-top: 10px; position: absolute; height: auto; }
 .btn-contacto { background: none; border: none; cursor: pointer; }
 .btn-contacto img { width: 50px; height: 50px; }
 .contenedor { margin-top: 80px; display: flex; justify-content: center; align-items: center; }
 #contact { height: 50vh; }
-#fiuba-logo { width: 200px; height: 200px; margin-left: 140px; margin-top: 50px; animation: rotate 20s linear infinite; }
+#fiuba-logo { width: 200px; height: 200px; margin-left: 140px; margin-top: 50px; animation: rotate 20s linear infinite; position: relative; z-index: 0; }
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 #skill { margin-top: -90px; align-items: center; color:#00ff00; font-size: 60px; font-family: 'Montserrat', sans-serif; position: relative; text-align: center; }
 @keyframes translateThenRotate { 0% { transform: translateY(50px); opacity: 0; } 50% { transform: translateY(0px); opacity: 1; } 100% { transform: translateY(0px); } }
@@ -77,6 +79,8 @@ footer:hover { background-color: #222; }
 .PhoneTitle { display: none; }
 .social-buttons { display: none; }
 @media (max-width: 500px) {
+  header { height: 80px; }
+  section[id] { scroll-margin-top: 80px; }
   #Icon { width: 60px; height: 20px; margin-right: 100px; }
   .PhoneTitle { display: contents; font-size: 18px; }
   .overlay h3 { font-size: 40px; margin-top: 10px; }
@@ -87,10 +91,10 @@ footer:hover { background-color: #222; }
   button::before, button::after { width: initial; height: initial; background: initial; display: initial; transition: initial; }
   .menu { display: none; opacity: 0; transition: opacity 1s ease-in-out; border-radius: 5%; box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7); position: absolute; flex-direction: column; top: -1px; margin-right: 2px; align-items: flex-end; background-color: #000000; padding: 20px; }
   .menu.visible { display: flex; flex-wrap: nowrap; opacity: 1; }
-  #photo { width: 85%; height: 16%; margin-top: 200px; margin-bottom: -100px; margin-left: 3.8vh; }
+  #photo { width: 85%; height: 16%; margin-top: 140px; margin-bottom: -100px; margin-left: 3.8vh; }
   .title { font-size: 30px; }
-  #title2 { font-size: 15px; margin-left: 43px; position: relative; margin-top: 50px; }
-  #NAME { font-size: 35px; margin-top: -18px; margin-left: 40px; position: absolute; }
+  #title2 { font-size: 15px; margin-left: 43px; position: relative; margin-top: 10px; z-index: 2; }
+  #NAME { font-size: 35px; margin-top: -18px; margin-left: 40px; position: relative; z-index: 2; }
   #fiuba-logo { display: none; }
   #aboutMe { font-size: 15px; margin-left: 40px; color: rgba(255, 228, 196, 0.804); margin-top: 50px; margin-right: 60px; }
   .cards { display: flex; flex-wrap: nowrap; justify-content: space-around; gap: 2px; }
