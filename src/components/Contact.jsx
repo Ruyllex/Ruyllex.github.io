@@ -1,34 +1,44 @@
-import { redirect } from '../utils/redirect'
+import { useState } from 'react'
 
 function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const mailto = `mailto:ruymori@gmail.com?subject=${encodeURIComponent('Contacto desde portfolio')}&body=${encodeURIComponent(`Nombre: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)}`
+      window.location.href = mailto
+      setStatus('Opening your mail client...')
+    } catch (err) {
+      setStatus('There was an error. Please try again.')
+    }
+  }
+
   return (
     <section id="contact">
       <h1 className="title">Contact</h1>
-      <div className="contenedor">
-        <div className="btn-contacto">
-          <img onClick={() => redirect('https://www.instagram.com/ruy_mori/?next=%2F')} src="/assests/INstragramIcon.png" alt="Icono 1" style={{ width: '60px', height: '60px', marginBottom: '-7px' }} className="icono" />
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="form-row">
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" type="text" value={form.name} onChange={handleChange} required />
         </div>
-        <div className="btn-contacto">
-          <img onClick={() => redirect('https://github.com/Ruyllex')} src="/assests/github_logo_icon_147285.png" alt="Icono 2" style={{ marginLeft: '5px' }} className="icono" />
+        <div className="form-row">
+          <label htmlFor="email">Email</label>
+          <input id="email" name="email" type="email" value={form.email} onChange={handleChange} required />
         </div>
-        <div className="btn-contacto">
-          <img onClick={() => redirect('https://www.linkedin.com/in/ruy-mori-112967259/')} src="/assests/linkedinIcon.png" alt="Icono 3" style={{ width: '55px', marginLeft: '15px' }} />
+        <div className="form-row">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" rows="5" value={form.message} onChange={handleChange} required />
         </div>
-        <div className="btn-contacto">
-          <img src="/assests/facebookIcon.png" alt="Icono 3" style={{ width: '70px', height: '55px', marginBottom: '-3px' }} />
-        </div>
-        <div className="btn-contacto">
-          <img onClick={() => redirect('https://wa.me/1149458922/')} src="/assests/WhatsAppIcon.png" alt="Icono 3" id="WhatsAppIcon" />
-        </div>
-        <div className="btn-contacto">
-          <img onClick={() => redirect('https://twitter.com/RuyMori')} src="/assests/Twitter-X-White-Logo-PNG.png" alt="Icono 3" style={{ width: '50px', height: '40px', marginLeft: '8px' }} id="twitter" />
-        </div>
-      </div>
-      <div className="social-buttons">
-        <a href="#" className="social-button github" onClick={() => redirect('https://github.com/Ruyllex')}></a>
-        <a href="#" className="social-button linkedin" onClick={() => redirect('https://www.linkedin.com/in/ruy-mori-112967259/')}></a>
-        <a href="#" className="social-button instagram" onClick={() => redirect('https://www.instagram.com/ruy_mori/?next=%2F')}></a>
-      </div>
+        <button className="btn btn--primary" type="submit">Send</button>
+        {status && <p className="form-status">{status}</p>}
+      </form>
     </section>
   )
 }
