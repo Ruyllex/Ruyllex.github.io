@@ -151,7 +151,6 @@ function CanvasParticlesOld() {
 
   return <canvas id="particles" ref={canvasRef} />
 }
-
 function App() {
   useIntersectionAnimation('.hidden', 'show')
   useIntersectionAnimation('.buttonProject', 'appear')
@@ -164,8 +163,11 @@ function App() {
     <>
       <CanvasParticles />
       <Header />
+
+      {/* Hero fuera de container para ocupar toda la pantalla */}
+      <Hero />
+
       <div className="container">
-        <Hero />
         <About />
         <Skills />
         <Projects />
