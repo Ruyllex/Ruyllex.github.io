@@ -1,9 +1,11 @@
 import { redirect } from '../utils/redirect'
+import { useI18n } from '../hooks/useI18n'
 
 function Projects() {
+  const { t } = useI18n()
   return (
     <section id="projects" className="project1">
-      <h1 className="title">Projects</h1>
+      <h1 className="title">{t('projects_title')}</h1>
       <div className="gallery">
         <div className="buttonProject" onClick={() => redirect('https://github.com/Ruyllex/algo3_tp2')}>
           <img src="/assests/algoDefense.png" alt="Imagen 1" />

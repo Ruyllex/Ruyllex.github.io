@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useI18n } from '../hooks/useI18n'
 
 function Header() {
   const [isShrink, setIsShrink] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { t, lang, setLang } = useI18n()
 
   useEffect(() => {
     const handleScroll = () => setIsShrink(window.scrollY > 50)
@@ -32,10 +34,15 @@ function Header() {
               <i className="bi bi-x-lg" />
             </button>
           </li>
-          <li><a href="#about" onClick={(e) => handleAnchorClick(e, '#about')}>About Me</a></li>
-          <li><a href="#skill" onClick={(e) => handleAnchorClick(e, '#skill')}>Skills</a></li>
-          <li><a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>Projects</a></li>
-          <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>Contact</a></li>
+          <li><a href="#about" onClick={(e) => handleAnchorClick(e, '#about')}>{t('nav_about')}</a></li>
+          <li><a href="#skill" onClick={(e) => handleAnchorClick(e, '#skill')}>{t('nav_skills')}</a></li>
+          <li><a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>{t('nav_projects')}</a></li>
+          <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>{t('nav_contact')}</a></li>
+          <li>
+            <button onClick={() => setLang(lang === 'es' ? 'en' : 'es')} className="btn btn--primary" style={{ padding: '6px 10px', fontSize: 14 }}>
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
