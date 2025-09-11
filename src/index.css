@@ -31,11 +31,11 @@ section[id] { scroll-margin-top: 100px; }
 #about {
   display: flex;
   flex-direction: column;
-  align-items: flex;   /* centra horizontalmente */
-  justify-content: center; /* centra verticalmente si hay altura definida */
-  text-align: left;    /* centra el texto */
-  min-height: 100vh;     /* opcional: ocupa toda la pantalla */
-  gap: 1rem;             /* separa los elementos */
+  align-items: flex;   
+  justify-content: center; 
+  text-align: left;   
+  min-height: 100vh;    
+  gap: 1rem;             
 }
 
 #about h1,
