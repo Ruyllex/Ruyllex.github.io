@@ -1,37 +1,94 @@
-import React from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { motion } from 'motion/react'
 
-function BlurText({ children }) {
-  let indexCounter = 0
+const buildKeyframes = (from, steps) => {
+  const keys = new Set([...Object.keys(from), ...steps.flatMap((s) => Object.keys(s))])
+  const keyframes = {}
+  keys.forEach((k) => {
+    keyframes[k] = [from[k], ...steps.map((s) => s[k])]
+  })
+  return keyframes
+}
 
-  const wrapNode = (node) => {
-    const elements = []
+function BlurText({
+  text = '',
+  delay = 200,
+  className = '',
+  animateBy = 'words', // 'words' | 'letters'
+  direction = 'top', // 'top' | 'bottom'
+  threshold = 0.1,
+  rootMargin = '0px',
+  animationFrom,
+  animationTo,
+  easing = (t) => t,
+  onAnimationComplete,
+  stepDuration = 0.35
+}) {
+  const elements = animateBy === 'words' ? text.split(' ') : text.split('')
+  const [inView, setInView] = useState(false)
+  const ref = useRef(null)
 
-    const pushSpan = (content) => {
-      const currentIndex = indexCounter
-      elements.push(
-        <span className="blur-char" style={{ '--i': currentIndex }} key={`bchar-${currentIndex}`}>
-          {content}
-        </span>
-      )
-      indexCounter += 1
-    }
+  useEffect(() => {
+    if (!ref.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.unobserve(ref.current)
+        }
+      },
+      { threshold, rootMargin }
+    )
+    observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [threshold, rootMargin])
 
-    if (typeof node === 'string') {
-      for (const ch of node) pushSpan(ch === ' ' ? '\u00A0' : ch)
-    } else if (Array.isArray(node)) {
-      node.forEach((child) => {
-        elements.push(...wrapNode(child))
-      })
-    } else if (React.isValidElement(node)) {
-      pushSpan(React.cloneElement(node))
-    }
+  const defaultFrom = useMemo(
+    () => (direction === 'top' ? { filter: 'blur(10px)', opacity: 0, y: -50 } : { filter: 'blur(10px)', opacity: 0, y: 50 }),
+    [direction]
+  )
 
-    return elements
-  }
+  const defaultTo = useMemo(
+    () => [
+      { filter: 'blur(5px)', opacity: 0.5, y: direction === 'top' ? 5 : -5 },
+      { filter: 'blur(0px)', opacity: 1, y: 0 }
+    ],
+    [direction]
+  )
 
-  const content = React.Children.toArray(children).flatMap((child) => wrapNode(child))
+  const fromSnapshot = animationFrom ?? defaultFrom
+  const toSnapshots = animationTo ?? defaultTo
 
-  return <span className="blur-text">{content}</span>
+  const stepCount = toSnapshots.length + 1
+  const totalDuration = stepDuration * (stepCount - 1)
+  const times = Array.from({ length: stepCount }, (_, i) => (stepCount === 1 ? 0 : i / (stepCount - 1)))
+
+  return (
+    <p ref={ref} className={`blur-text ${className}`}>
+      {elements.map((segment, index) => {
+        const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots)
+        const spanTransition = {
+          duration: totalDuration,
+          times,
+          delay: (index * delay) / 1000,
+          ease: easing
+        }
+        return (
+          <motion.span
+            key={index}
+            initial={fromSnapshot}
+            animate={inView ? animateKeyframes : fromSnapshot}
+            transition={spanTransition}
+            onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
+            style={{ display: 'inline-block', willChange: 'transform, filter, opacity' }}
+          >
+            {segment === ' ' ? '\u00A0' : segment}
+            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
+          </motion.span>
+        )
+      })}
+    </p>
+  )
 }
 
 export default BlurText
