@@ -31,17 +31,19 @@ function BlurText({
 
   useEffect(() => {
     if (!ref.current) return
+    const element = ref.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true)
-          observer.unobserve(ref.current)
+        } else {
+          setInView(false)
         }
       },
       { threshold, rootMargin }
     )
-    observer.observe(ref.current)
-    return () => observer.disconnect()
+    observer.observe(element)
+    return () => observer.unobserve(element)
   }, [threshold, rootMargin])
 
   const defaultFrom = useMemo(

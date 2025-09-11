@@ -156,7 +156,6 @@ function App() {
   useIntersectionAnimation('.buttonProject', 'appear')
   useIntersectionAnimation('.skill', 'appear')
   useIntersectionAnimation('.skilss', 'appear')
-  useIntersectionAnimation('.blur-text', 'is-visible')
 
   const redirect = (url) => window.location.assign(url)
 
