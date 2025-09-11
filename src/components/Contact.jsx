@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import SendButton from './SendButton'
+import SendButton from './SendButton.jsx'
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
