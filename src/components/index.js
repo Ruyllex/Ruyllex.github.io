@@ -7,5 +7,5 @@ export { default as Projects } from './Projects'
 export { default as Contact } from './Contact'
 export { default as Footer } from './Footer'
 export { default as BlurText } from './BlurText'
-export { default as PrimaryButton } from './PrimaryButton'
+export { default as SendButton } from './SendButton'
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SendButton = () => {
+const SendButton = ({ label = 'Send', className = '', ...props }) => {
   return (
-    <StyledWrapper>
-      <button>
+    <StyledWrapper className={className}>
+      <button {...props}>
         <span className="box">
-          Hover!
+          {label}
         </span>
       </button>
     </StyledWrapper>
@@ -61,26 +61,26 @@ const StyledWrapper = styled.div`
   }
 
   .box:hover:before {
-    border-color: #262626;
+    border-color: #33ff00;
     height: 100%;
     transform: translateX(0);
     transition: .3s transform linear, .3s height linear .3s;
   }
 
   .box:hover:after {
-    border-color: #262626;
+    border-color: #33ff00;
     height: 100%;
     transform: translateX(0);
     transition: .3s transform linear, .3s height linear .5s;
   }
 
   button {
-    color: black;
+    color: #33ff00;
     text-decoration: none;
     cursor: pointer;
     outline: none;
     border: none;
-    background: transparent;
+    background: #000000;
   }`;
 
 export default SendButton;

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import PrimaryButton from './PrimaryButton'
+import SendButton from './SendButton'
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -38,7 +38,7 @@ function Contact() {
           <textarea id="message" name="message" rows="5" value={form.message} onChange={handleChange} required />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <PrimaryButton type="submit">Send</PrimaryButton>
+          <SendButton label="Send" type="submit" />
         </div>
         {status && <p className="form-status">{status}</p>}
       </form>
