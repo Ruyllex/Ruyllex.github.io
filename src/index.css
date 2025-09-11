@@ -28,10 +28,27 @@ section { height: 100vh; width: 100vw; scroll-snap-align: start; justify-content
 .container { min-height: 100vh; overflow: hidden; }
 h1, h2, h3, p { margin-top: 0; }
 section[id] { scroll-margin-top: 100px; }
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra horizontalmente */
+  justify-content: center; /* centra verticalmente si hay altura definida */
+  text-align: center;    /* centra el texto */
+  min-height: 100vh;     /* opcional: ocupa toda la pantalla */
+  gap: 1rem;             /* separa los elementos */
+}
+
+#about h1,
+#about h2,
+#about h3,
+#about p {
+  margin: 0.5rem 0;
+}
 #title2 { position: relative; color: white; margin-left: 451px; margin-top: -170px; font-size: 20px; z-index: 1; }
 #NAME { position: relative; color: white; margin-left: 448px; font-size: 50px; margin-top: -20px; z-index: 1; }
 h2 { font-size: 5vw; margin-top: -150px; }
 #aboutMe { margin-top: -50px; flex-direction: column; color: rgba(255,255,255,0.788); font-size: 20px; max-width: 800px; margin-left: 450px; position: relative; z-index: 1; }
+
 button { color: white; text-decoration: none; font-size: 40px; border: none; background: none; font-weight: 600; font-family: 'Montserrat', sans-serif; margin-top: -40px; }
 button::before { margin-left: auto; }
 button::after, button::before { content: ''; width: 0%; height: 2px; background: #33ff00; display: block; transition: 0.5s; }
