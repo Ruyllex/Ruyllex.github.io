@@ -205,10 +205,33 @@ button:hover::after, button:hover::before { width: 100%; }
   .menu.visible { display: flex; flex-wrap: nowrap; opacity: 1; }
  #photo { width: 80%;max-width: 300px; height: auto;     display: block; margin: 20px auto;}
   .title { font-size: 30px; }
-  #title2 { font-size: 15px; margin-left: 43px; position: relative; margin-top: 10px; z-index: 2; }
-  #NAME { font-size: 35px; margin-top: -18px; margin-left: 40px; position: relative; z-index: 2; }
-  #fiuba-logo { display: none; }
-  #aboutMe { font-size: 15px; margin-left: 40px; color: rgba(255, 228, 196, 0.804); margin-top: 50px; margin-right: 60px; }
+  #title2 { 
+    font-size: 15px; 
+    margin-left: 1.5rem;    /* antes era 43px */
+    position: relative; 
+    margin-top: 10px; 
+    z-index: 2; 
+    padding: 0 1rem;        /* nuevo padding horizontal */
+  }
+  
+  #NAME { 
+    font-size: 35px; 
+    margin-top: -18px; 
+    margin-left: 1.5rem;    /* antes era 40px */
+    position: relative; 
+    z-index: 2; 
+    padding: 0 1rem;        /* nuevo padding horizontal */
+  }
+  
+  #aboutMe { 
+    font-size: 15px; 
+    margin-left: 1.5rem;    /* antes era 40px */
+    color: rgba(255, 228, 196, 0.804); 
+    margin-top: 50px; 
+    margin-right: 1.5rem;   /* antes era 60px */
+    padding: 0 1rem;        /* nuevo padding horizontal */
+  }
+
   .cards { display: flex; flex-wrap: nowrap; justify-content: center; gap: 8px; padding: 0 12px; }
   .card { min-width: 200px; height: auto; border-radius: 10px; padding: 10px; text-align: center; font-size: 14px; display: flex; flex-direction: column; align-items: center; }
   .skill { width: 60px; height: auto; margin: 5px auto; display: block; }
