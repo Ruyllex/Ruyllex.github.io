@@ -12,7 +12,9 @@ const messages = {
     about_hi: 'Hi, my name is:',
     about_name: 'RUY MORI',
     about_text:
-      'A student of Computer Engineering at the University of Buenos Aires. I find joy in crafting digital experiences that resonate with users. Beyond coding, I find balance through fitness and sports like baseball and soccer. In my free time I like to solve LeetCode challenges or read books.',
+      'I am a software developer and a Computer Engineering student at the University of Buenos Aires. Driven by curiosity and a strong attention to detail, I enjoy building modern and efficient software that provide great experiences for users.',
+
+
     skills_title: 'Skills',
     skills_backend: 'Backend',
     skills_frontend: 'Frontend',
@@ -23,7 +25,10 @@ const messages = {
     contact_message: 'Message',
     contact_send: 'Send',
     contact_opening: 'Opening your mail client...',
-    contact_error: 'There was an error. Please try again.'
+    contact_error: 'There was an error. Please try again.',
+    footer_brand: 'RUY MORI',
+    footer_desc: 'Building modern and efficient software.',
+    footer_contact: 'Get in touch',
   },
   es: {
     nav_about: 'Sobre mí',
@@ -34,7 +39,8 @@ const messages = {
     about_hi: 'Hola, mi nombre es:',
     about_name: 'RUY MORI',
     about_text:
-      'Estudiante de Ingeniería en Computación en la Universidad de Buenos Aires. Disfruto creando experiencias digitales que conectan con las personas. Además del código, encuentro balance con el fitness y deportes como béisbol y fútbol. En mi tiempo libre me gusta resolver desafíos de LeetCode o leer libros.',
+      'Soy desarrollador de software y estudiante de Ingeniería en Computación en la Universidad de Buenos Aires. Impulsado por la curiosidad y con gran atención al detalle, disfruto crear aplicaciones modernas y eficientes que ofrezcan excelentes experiencias a los usuarios.',
+
     skills_title: 'Habilidades',
     skills_backend: 'Backend',
     skills_frontend: 'Frontend',
@@ -45,7 +51,10 @@ const messages = {
     contact_message: 'Mensaje',
     contact_send: 'Enviar',
     contact_opening: 'Abriendo tu cliente de correo...',
-    contact_error: 'Hubo un error. Intenta nuevamente.'
+    contact_error: 'Hubo un error. Intenta nuevamente.',
+    footer_brand: 'RUY MORI',
+    footer_desc: 'Construyendo aplicaciones web modernas y eficientes.',
+    footer_contact: 'Contáctame',
   }
 }
 

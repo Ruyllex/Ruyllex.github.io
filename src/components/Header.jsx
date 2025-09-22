@@ -38,11 +38,6 @@ function Header() {
           <li><a href="#skill" onClick={(e) => handleAnchorClick(e, '#skill')}>{t('nav_skills')}</a></li>
           <li><a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>{t('nav_projects')}</a></li>
           <li><a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>{t('nav_contact')}</a></li>
-          <li>
-            <button onClick={() => setLang(lang === 'es' ? 'en' : 'es')} className="btn btn--primary" style={{ padding: '6px 10px', fontSize: 14 }}>
-              {lang === 'es' ? 'EN' : 'ES'}
-            </button>
-          </li>
         </ul>
       </nav>
     </header>

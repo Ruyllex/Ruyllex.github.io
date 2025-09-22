@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SendButton from './SendButton.jsx'
-
+import { useI18n } from '../hooks/useI18n'
 
 function Contact() {
   const { t } = useI18n()

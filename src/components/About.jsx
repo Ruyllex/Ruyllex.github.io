@@ -12,7 +12,7 @@ function About() {
         <BlurText
           id="aboutMe"
           className="about-paragraph"
-          animateBy="letters"
+          animateBy="words"
           direction="bottom"
           delay={18}
           text={t('about_text')}

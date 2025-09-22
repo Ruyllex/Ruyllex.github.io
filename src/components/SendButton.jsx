@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useI18n } from '../hooks/useI18n'
 const SendButton = () => {
+   const { t } = useI18n()
   return (
     <StyledWrapper>
-      <a className="btn" href="#">I am a button</a>
+      <a className="btn" href="#">{t('contact_send')}</a>
     </StyledWrapper>
   );
 }
@@ -16,14 +17,14 @@ const StyledWrapper = styled.div`
    font-size: 16px;
    font-weight: 700;
    color: white;
-   border: 3px solid rgb(252, 70, 100);
+   border: 3px solid #33ff00;
    cursor: pointer;
    position: relative;
    background-color: transparent;
    text-decoration: none;
    overflow: hidden;
    z-index: 1;
-   font-family: inherit;
+   font-family: Montserrat;
   }
 
   .btn::before {
@@ -33,10 +34,11 @@ const StyledWrapper = styled.div`
    top: 0;
    width: 100%;
    height: 100%;
-   background-color: rgb(252, 70, 100);
+   background-color: #20d300ff;
    transform: translateX(-100%);
    transition: all .3s;
    z-index: -1;
+
   }
 
   .btn:hover::before {

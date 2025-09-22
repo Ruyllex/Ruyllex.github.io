@@ -12,7 +12,7 @@ const buildKeyframes = (from, steps) => {
 
 function BlurText({
   text = '',
-  delay = 200,
+  delay = 50,
   className = '',
   animateBy = 'words', // 'words' | 'letters'
   direction = 'top', // 'top' | 'bottom'
